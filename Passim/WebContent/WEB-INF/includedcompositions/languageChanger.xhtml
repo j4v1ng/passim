@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+	
+	
+	<ui:composition>
+		
+	<h:form id="langbar">	
+		
+		<h:commandLink id="changetoEnglish"
+			 action="#{languageChangeBB.changeToEnglish}">
+			<h:graphicImage value="/resources/images/uk.png" alt="not found" 
+				 />
+		</h:commandLink>
+		
+		 <h:commandLink id="changetoFrench"
+			action="#{languageChangeBB.changeToFrench}" >
+			<h:graphicImage value="/resources/images/fr.png" alt="not found"
+				 />
+		</h:commandLink>
+			
+		<h:commandLink
+			id="changetoGerman" 
+			action="#{languageChangeBB.changeToGerman}" > 
+			<h:graphicImage value="/resources/images/de.png" alt="not found"
+				/>
+		</h:commandLink>
+		
+		<h:commandLink
+			id="changetoSpanish" 
+			action="#{languageChangeBB.changeToSpanish}" >
+			<h:graphicImage value="/resources/images/es.png" alt="not found"
+				/>
+		</h:commandLink>
+			
+	    <h:commandLink
+			id="changetoArabic" 
+			action="#{languageChangeBB.changeToArabic}" >
+			<h:graphicImage value="/resources/images/ar.png" alt="not found"
+				 />
+		</h:commandLink>
+		
+		<h:commandLink
+			id="changetoRusian" 
+			action="#{languageChangeBB.changeToRusian}" >
+			<h:graphicImage value="/resources/images/ru.png" alt="not found"
+				 />
+		</h:commandLink>
+			
+	    <h:commandLink
+			id="changetoItalian" 
+			action="#{languageChangeBB.changeToItalian}" >
+			<h:graphicImage value="/resources/images/it.png" alt="not found"
+				 />
+		</h:commandLink>
+		
+		<h:commandLink
+			id="changetoSerbian" 
+			action="#{languageChangeBB.changeToSerbian}">
+			<h:graphicImage value="/resources/images/yu.png" alt="not found"
+				 />
+		</h:commandLink>
+		
+	</h:form>
+	
+	
+	
+	</ui:composition>
+</html>

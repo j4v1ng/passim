@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+
+<ui:composition template="WEB-INF/templates/masterLayout.xhtml">
+	<ui:define name="seooptions">
+		<meta name="description" content="#{msg.description}"/>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta name="keywords" content="#{msgs.keywords}"/>
+		<meta name="robots" content="selection"/>
+	</ui:define>
+
+	<ui:define name="title">
+		#{msgs.title}
+	</ui:define>
+
+	<ui:define name="content">
+
+		<ui:include src="/WEB-INF/includedcompositions/notificationbar.xhtml" />
+
+		<div class="leftContainer"><h:form target="_blank">
+			<h:commandButton action="#{mainPageBB.goToRandomLink}"
+				styleClass="randombutton" />
+		</h:form></div>
+		<div class="rightContainer"><strong> #{msgs.sidetext1}
+		<br />
+		#{msgs.sidetext2} <br />
+		#{msgs.sidetext3} <br />
+		#{msgs.sidetext4} </strong> <br />
+		<br />
+		<br />
+		<b><h:link value="#{msgs.addlink}" outcome="newlink"
+			styleClass="newlink" /></b></div>
+
+		<br />
+		<ui:include src="/WEB-INF/includedcompositions/socialmedia.xhtml" />	
+	
+	</ui:define>
+
+</ui:composition>
+
+</html>

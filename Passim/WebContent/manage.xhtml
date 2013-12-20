@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+
+<ui:composition template="WEB-INF/templates/masterLayout.xhtml">
+
+	<ui:define name="title">
+		Welcome to passim! Here there everywhere
+	</ui:define>
+
+	<ui:define name="content">
+		<div id="content">
+		<h3>#{msgs.pagenotfound}</h3>
+		<br/>
+		<h:link outcome="index" value="#{msgs.goback}" styleClass="gobacklink"/>
+		<h:form rendered="#{managementBB.authorized == false}">
+			<h:inputText value="#{managementBB.input}" validator="#{mainPageValidator.validateBasicInputFields}"/>
+			<h:commandButton value="..." action="#{managementBB.seeWhatsUp}"/>
+		</h:form>
+		
+		<h:form rendered="#{managementBB.authorized}" target="_blank">		
+			<h:dataTable value="#{managementBB.retrieveRecords()}" var="record">
+			
+			<h:column>
+				<f:facet name="header">URL</f:facet>
+				<h:commandLink value="#{record.url}" action="#{managementBB.goToLink(record.url)}"/>				
+			</h:column>			
+		
+			<h:column>
+				<f:facet name="header">Submition date</f:facet>
+				#{record.submitionDate}
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Unacceptable</f:facet>
+				#{record.unnaceptableContent}
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Option</f:facet>
+				<h:commandLink value="X" action="#{managementBB.deleteRow(record)}"/>
+			</h:column>
+			
+		</h:dataTable>
+		
+			<h:commandButton value="exit" action="#{managementBB.exit}"/>
+		</h:form>
+		</div>
+	</ui:define>
+
+</ui:composition>
+
+</html>

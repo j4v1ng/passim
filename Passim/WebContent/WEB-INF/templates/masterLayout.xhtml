@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<f:view locale="#{languageChangeBB.locale}">
+
+	<h:head>
+		<title><ui:insert name="title" /></title>
+		<ui:insert name="seooptions" />
+		<h:outputStylesheet library="css" name="passimstyle.css" />	
+		<!-- ADDING A FAVICON TO YOUR SITE! -->	
+		<link rel="icon" type="image/png" href="#{request.contextPath}/resources/images/favicon.png"/>
+	</h:head>
+
+	<h:body>
+
+		<ui:include src="/WEB-INF/includedcompositions/noscriptchunk.xhtml" />
+
+		<div id="divMain" style="display: none">
+		<!-- This will show the page only when javascript is on -->
+		<script>
+	document.getElementById("divMain").style.display = "block";
+</script>
+
+		<div id="layout">
+
+		<div id="header">
+
+		<div id="logo1">
+		<table>
+			<tr>
+				<td><h:link value="" outcome="index">
+					<span>Passim</span>.me</h:link></td>
+			</tr>
+			<tr>
+				<td><!-- THE LANGUAGE BAR(Independent composition component) -->
+				<ui:include
+					src="/WEB-INF/includedcompositions/languageChanger.xhtml" /></td>
+			</tr>
+		</table>
+		</div>
+
+		</div>
+
+		<div class="mainContainer">
+			<ui:insert name="content" />
+		</div>
+		
+		<div id="footer">			
+		<ui:include	src="/WEB-INF/includedcompositions/adsense.xhtml" />
+		<p id="copyright">©2012 D.P.Z</p> 
+		</div>
+
+		</div>
+		</div>
+	</h:body>
+</f:view>
+</html>

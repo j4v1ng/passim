@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow: /manage.xhtml
+Disallow: /404.xhtml
+Disallow: /newlink.xhtml

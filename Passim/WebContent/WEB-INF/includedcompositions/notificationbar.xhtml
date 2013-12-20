@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui">
+
+
+<ui:composition>
+	<!-- The notification bar only works if the bar is located after -->
+		<p:notificationBar id="notbar" position="top" effect="slide" widgetVar="topBar" style="background-color:#93b21a; opacity: .75; filter: alpha(opacity=75); -moz-opacity: .75; -webkit-opacity: .75" rendered="#{param.link == '1'}" >
+			<h:outputText value="#{msgs.thanks}"
+				style="color:#cfe444;font-size:36px;" />
+		</p:notificationBar>
+	   <script type="text/javascript">
+	      jQuery(function() {
+		  topBar.show()
+		  setTimeout("topBar.hide()",1500);
+	       });
+         </script>
+</ui:composition>
+</html>
