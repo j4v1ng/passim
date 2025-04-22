@@ -1,0 +1,55 @@
+# Gradle files
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# Package files
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Virtual machine crash logs
+hs_err_pid*
+
+# Mac OS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Local configuration file
+local.properties
+
+# Kotlin
+.kotlin/
+
+# Ktor
+.ktor/
+
+# H2 Database files
+*.db
+*.mv.db
+*.trace.db
+
+# Temporary files
+*~
+.*.swp
+.*.swo
